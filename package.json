@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "rm -rf dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier-format": "prettier 'src/**/*.ts' --write"
   },
@@ -13,5 +14,14 @@
   "devDependencies": {
     "typescript": "^5.0.3",
     "prettier": "^2.8.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*"
   }
 }
