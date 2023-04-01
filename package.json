@@ -1,7 +1,7 @@
 {
   "name": "geomescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript library for simple geometric operations",
   "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
