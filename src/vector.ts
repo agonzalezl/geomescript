@@ -20,6 +20,10 @@ export class Vector {
     return this.x * other.x + this.y * other.y;
   }
 
+  cross(other: Vector): Vector {
+    return new Vector(this.x * other.x, this.y * other.y);
+  }
+
   subtract(other: Vector): Vector {
     return new Vector(this.x - other.x, this.y - other.y);
   }
@@ -30,5 +34,14 @@ export class Vector {
 
   multiply(scalar: number): Vector {
     return new Vector(this.x * scalar, this.y * scalar);
+  }
+
+  reflect(normal: Vector): Vector {
+    // https://math.stackexchange.com/questions/13261/how-to-get-a-reflection-vector
+    // 𝑟=𝑑−2(𝑑⋅𝑛)𝑛
+
+    const product = this.dot(normal);
+    const normalizedNormal = normal.normalize();
+    return this.subtract(normalizedNormal.multiply(product * 2));
   }
 }
