@@ -16,6 +16,11 @@ export class Vector {
     return new Vector(this.x / mag, this.y / mag);
   }
 
+  scale(factor: number): void {
+    this.x *= factor;
+    this.y *= factor;
+  }
+
   dot(other: Vector): number {
     return this.x * other.x + this.y * other.y;
   }
