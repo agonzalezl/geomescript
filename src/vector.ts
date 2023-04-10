@@ -21,6 +21,10 @@ export class Vector {
     this.y *= factor;
   }
 
+  scaled(factor: number): Vector {
+    return new Vector((this.x *= factor), (this.y *= factor));
+  }
+
   dot(other: Vector): number {
     return this.x * other.x + this.y * other.y;
   }
