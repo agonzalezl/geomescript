@@ -14,11 +14,11 @@ export class Point {
   translate(arg1?: number | Vector, arg2?: number): Point {
     if (arg1 instanceof Vector) {
       const vector = arg1;
-      return new Point(this.x + vector.x, (this.y += vector.y));
+      return new Point(this.x + vector.x, this.y + vector.y);
     } else {
       const dx = arg1 ?? 0;
       const dy = arg2 ?? 0;
-      return new Point(this.x + dx, (this.y += dy));
+      return new Point(this.x + dx, this.y + dy);
     }
   }
 }
