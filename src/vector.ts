@@ -53,4 +53,12 @@ export class Vector {
     const normalizedNormal = normal.normalize();
     return this.subtract(normalizedNormal.multiply(product * 2));
   }
+
+  normal(): Vector {
+    const len = this.magnitude();
+    if (len === 0) {
+      return new Vector(0, 0);
+    }
+    return new Vector(-this.y / len, this.x / len);
+  }
 }
