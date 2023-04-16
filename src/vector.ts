@@ -22,7 +22,7 @@ export class Vector {
   }
 
   scaled(factor: number): Vector {
-    return new Vector((this.x *= factor), (this.y *= factor));
+    return new Vector((this.x * factor), (this.y * factor));
   }
 
   dot(other: Vector): number {
